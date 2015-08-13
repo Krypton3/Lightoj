@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long arr[21];
+int buff[21];
+int main()
+{
+    int test,i,len;
+    long long num;
+    arr[0]=1;
+    for(  i = 1; i < 21; i++) arr[i] = arr[i-1] * i;
+    scanf("%d",&test);
+    for(int p=1;p<=test;p++){
+        scanf("%lld", &num);
+        for( i = 20, len = 0; i >= 0 && num > 0; i--) {
+			if(arr[i] > num) continue;
+			buff[len++] = i, num -= arr[i];
+		}
+		if(num != 0) printf("Case %d: impossible\n", p);
+		else {
+			printf("Case %d: ", p);
+			while(len--) printf("%d!%c", buff[len], (len?'+':'\n'));
+		}
+    }
+    return 0;
+}
