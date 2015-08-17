@@ -1,0 +1,19 @@
+import java.math.BigInteger;
+import java.util.*;
+public class lightoj1214 {
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		int test=in.nextInt();
+		for(int p=1;p<=test;p++){
+			BigInteger a=in.nextBigInteger();
+			BigInteger b=in.nextBigInteger();
+			a=a.abs();
+			b=b.abs();
+			if(a.mod(b).equals(BigInteger.ZERO)){
+				System.out.println("Case "+p+": divisible");
+			}else{
+				System.out.println("Case "+p+": not divisible");
+			}
+		}
+	}
+}
