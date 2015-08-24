@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test,n,d;
+    scanf("%d",&test);
+    for(int p=1;p<=test;p++){
+        scanf("%d%d",&n,&d);
+        int s=d%n;
+        int c=1;
+        while(s%n){
+            s=(10*s+d)%n;
+            c++;
+        }
+        printf("Case %d: %d\n",p,c);
+    }
+    return 0;
+}
